@@ -11,13 +11,31 @@
 				{
 					"l" : "A table stands in middle of the room.",
 					"x" : "A normal table.",
-					"m" : [false, "The table is bolted to the floor."]
-				},
-				"key" :
-				{
-					"l" : "A key is laying on the table.",
-					"x" : "A good ol' rusty key",
-					"t" : true
+					"m" : [false, "The table is bolted to the floor."],
+					"Items" :
+					{
+						"drawer" :
+						{
+							"l" : "There is a drawer under the desk.",
+							"x" : "A normal drawer with a lock.",
+                            "Locked" : ["tiny_key","The drawer are locked","You have unlocked the drawer","Cannot be opened with this item","The drawer are unlocked"],
+							"Items" :
+							{
+                                "knife" :
+                                {
+                                    "l" : "A knife is laying in the drawer.",
+                                    "x" : "Sharp knife, could be used to cut something.",
+                                    "t" : [true, "You have took the knife from the drawer."]
+                                }
+							}
+						},
+                        "key" :
+                        {
+                            "l" : "A key is laying on the table.",
+                            "x" : "A good ol' rusty key",
+                            "t" : [true, "You have took the key from the table."]
+                        }
+					}
 				}
 			},
 		    "Exits" :
@@ -25,10 +43,50 @@
 		    	"north" :
 		    	{
 		    		"Name" : "door",
+		    		"Destination" : "hall",
+		    		"l" : "A large wooden door stands do the north",
+		    		"x" : "There is a keyhole, the door is probably locked.",
+		    		"Locked" : ["key","The doors are locked","You have unlocked the doors","Cannot be opened with this item","The doors are unlocked"]
+		    	}
+		    }
+		},
+		"hall" :
+		{
+			"Title" : "A great hall",
+			"Description" : "An octogonal hall with high ceiling.",
+			"Items" : 
+			{
+                "painting" :
+                {
+                    "l" : "A painting of some lord is on the wall to the east.",
+                    "x" : "There is a hidden compartment behind the painting",
+                    "Items" :
+                    {
+                        "tiny_key" :
+                        {
+                            "l" : "A tiny_key lays in the cavity.",
+                            "x" : "A tiny_key. Could be used to open something. Like a drawer.",
+                            "t" : [true, "You have took the tiny_key from the compartment."]
+                        }
+                    }
+                }
+			},
+		    "Exits" :
+		    {
+		    	"south" :
+		    	{
+		    		"Name" : "door",
+		    		"Destination" : "start",
+		    		"l" : "A large wooden doors stands to the south.",
+		    		"x" : "The doors are unlocked."
+		    	},
+		    	"north" :
+		    	{
+		    		"Name" : "gate",
 		    		"Destination" : "end",
-		    		"Description" : "A large wooden door stand do the north",
-		    		"Locked" : ["key","The door is locked","You have unlocked the door","Cannot be opened with this item"]
-
+		    		"l" : "A large metal gate blocks the exit to the north.",
+                    "x" : "The fate is held shut with a rope.",
+		    		"Locked" : ["knife","The gate is held shut with a rope.","You have cut the rope and opened the fate.","Cannot be opened with this item.","There is a cut rope on the gate."]
 		    	}
 		    }
 		},
@@ -44,8 +102,9 @@
 		    	"south" :
 		    	{
 		    		"Name" : "door",
-		    		"Destination" : "start",
-		    		"Description" : "A large wooden door stand do the south"
+		    		"Destination" : "hall",
+		    		"l" : "A large gate stands to the south",
+                    "x" : "A large gate stands to the south"
 		    	}
 		    }
 		}
