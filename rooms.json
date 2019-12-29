@@ -1,0 +1,53 @@
+{
+	"Rooms" :
+	{
+		"start" :
+		{
+			"Title" : "Entrance hall",
+			"Description" : "A long hall with arching ceiling ",
+			"Items" : 
+			{
+				"table" :
+				{
+					"l" : "A table stands in middle of the room.",
+					"x" : "A normal table.",
+					"m" : [false, "The table is bolted to the floor."]
+				},
+				"key" :
+				{
+					"l" : "A key is laying on the table.",
+					"x" : "A good ol' rusty key",
+					"t" : true
+				}
+			},
+		    "Exits" :
+		    {
+		    	"north" :
+		    	{
+		    		"Name" : "door",
+		    		"Destination" : "end",
+		    		"Description" : "A large wooden door stand do the north",
+		    		"Locked" : ["key","The door is locked","You have unlocked the door","Cannot be opened with this item"]
+
+		    	}
+		    }
+		},
+		"end" :
+		{
+			"Title" : "The outside",
+			"Description" : "You got outside",
+			"Items" : 
+			{
+			},
+		    "Exits" :
+		    {
+		    	"south" :
+		    	{
+		    		"Name" : "door",
+		    		"Destination" : "start",
+		    		"Description" : "A large wooden door stand do the south"
+		    	}
+		    }
+		}
+	}
+}
