@@ -180,7 +180,7 @@ class roomClass:
     def get_exit(self,direction):
         direction = direction.lower()
         
-        if not direction in possibleDirections:
+        if not direction in roomClass.possibleDirections:
             print("  " + direction + " is not a valid direction")
             return "err"
 
